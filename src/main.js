@@ -4,6 +4,9 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+import 'bootstrap'
+import 'bootstrap-icons/font/bootstrap-icons.css'
+
 new Vue({
   router,
   render: h => h(App)

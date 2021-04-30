@@ -4,26 +4,41 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
+const routes = [{
+        path: '/',
+        name: 'Home',
+        component: () => import('../views/Home.vue')
+    },
+    {
+        path: '/privacy_policy',
+        component: () => import('../views/privacy_policy.vue')
+    },
+    {
+        path: '/data_loss_prevention',
+        component: () => import('../views/data_loss_prevention.vue')
+    },
+    {
+        path: '/company',
+        component: () => import('../views/company.vue')
+    },
+    {
+        path: '/business',
+        component: () => import('../views/business.vue')
+    },
+    {
+        path: '/ir',
+        component: () => import('../views/ir.vue')
+    },
+    {
+        path: '/career',
+        component: () => import('../views/career.vue')
+    },
 ]
 
 const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
 })
 
 export default router
