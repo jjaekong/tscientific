@@ -26,49 +26,38 @@
         <div class="modal fade" tabindex="-1" id="inquire">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header d-flex align-items-center">
                         <h5 class="modal-title">제휴 제안ㆍ서비스 문의</h5>
                     </div>
                     <div class="modal-body p-4 p-md-5">
                         <div class="mb-3">
-                            <input type="text" class="form-control form-control-lg" placeholder="회사명" required>
+                            회사명, 연락처, 문의내용을 아래의 메일로 보내주세요.<br class="d-none d-sm-inline">
+                            빠른 시간 안에 확인 후 연락드리겠습니다.
                         </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control form-control-lg" placeholder="이름" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" class="form-control form-control-lg" placeholder="이메일" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="text" class="form-control form-control-lg" placeholder="전화번호" required>
-                        </div>
-                        <div class="mb-3">
-                            <textarea class="form-control form-control-lg" placeholder="문의내용" rows="5"></textarea>
-                        </div>
-                        <div class="mb-3 agree">
-                            <div>
-                                <div class="p-3">
-                                    <label class="d-flex align-items-center mb-0">
-                                        <input type="checkbox"><span class="ml-2">개인정보 수집 및 이용 동의 <b>(필수)</b></span>
-                                    </label>
-                                </div>
-                                <div class="p-3">
-                                    개인정보 수집 항목  :  회사명, 이름, 이메일, 전화번호<br>
-                                    개인정보 수집 및 이용 목적  :  접수된 문의사항에 대한 답변 안내<br>
-                                    개인정보 보유 및 이용기간  :  답변 완료 시점으로부터 3개월 보관 후 파기
-                                </div>
+                        <div class="mb-4">
+                            <div class="card p-4" style="border-radius: 1rem;">
+                                <h6 class="mb-2">제휴영업팀</h6>
+                                <!-- <p class="mb-0 heading-4"><b>aff@tscientific.co.kr</b></p> -->
+                                <p clsas="mb-0 text-left"><button class="btn btn-link p-0 border-0 text-decoration-none d-inline text-dark outline-none" @click.prevent="copyEmail"><b>aff@tscientific.co.kr</b> <i class="bi bi-files"></i></button></p>
                             </div>
                         </div>
-                        <div class="btn-area">
-                            <button class="btn btn-lg btn-cancel" data-dismiss="modal">취소</button>
-                            <button class="btn btn-lg btn-submit ml-3">문의하기</button>
-                        </div>
+                        <button class="btn btn-lg btn-ok btn-block" data-dismiss="modal">확인</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    methods: {
+        copyEmail: function () {
+            prompt('이메일주소를 복사하세요.', 'aff@tscientific.co.kr')
+        },
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 #header {
@@ -190,19 +179,26 @@
             }
         }
     }
-    .btn-area {
-        display: flex;
+    .card {
+        height: 15rem;
+        background-image: url('~@/assets/logo_with_shape.png');
+        background-repeat: no-repeat;
+        background-size: 100px auto;
+        background-position: calc(100% - 2rem) calc(100% - 2rem);
         .btn {
-            flex: 1;
-            border: 1px solid black;
-            border-radius: 0;
-            font-size: 12px;
-            height: 40px;
+            font-size: 1rem;
         }
-        .btn-submit {
-            background-color: black;
-            color: white;
-        }
+    }
+    .btn-ok {
+        flex: 1;
+        border: 1px solid black;
+        border-radius: 0;
+        font-size: 12px;
+        height: 40px;
+        // background-color: rgb(44, 46, 135);
+        // color: white;
+        background-color: white;
+        color: black;
     }
     @media screen and (min-width: 768px) {
         .modal-header {
@@ -217,10 +213,13 @@
         .agree {
             font-size: 11px;
         }
-        .btn-area {
+        .btn-ok {
+            font-size: 14px;
+            height: 45px;
+        }
+        .card {
             .btn {
-                font-size: 14px;
-                height: 45px;
+                font-size: 1.5rem;
             }
         }
     }
@@ -237,11 +236,9 @@
         .agree {
             font-size: 12px;
         }
-        .btn-area {
-            .btn {
-                font-size: 15px;
-                height: 50px;
-            }
+        .btn-ok {
+            font-size: 15px;
+            height: 50px;
         }
     }
 }

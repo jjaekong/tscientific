@@ -14,6 +14,26 @@ const routes = [{
         component: () => import('../views/privacy_policy.vue')
     },
     {
+        path: '/privacy_policy_180222',
+        component: () => import('../views/privacy_policy_180222.vue')
+    },
+    {
+        path: '/privacy_policy_191129',
+        component: () => import('../views/privacy_policy_191129.vue')
+    },
+    {
+        path: '/privacy_policy_200708',
+        component: () => import('../views/privacy_policy_200708.vue')
+    },
+    {
+        path: '/privacy_policy_200807',
+        component: () => import('../views/privacy_policy_200807.vue')
+    },
+    {
+        path: '/privacy_policy_201116',
+        component: () => import('../views/privacy_policy_201116.vue')
+    },
+    {
         path: '/data_loss_prevention',
         component: () => import('../views/data_loss_prevention.vue')
     },
@@ -38,7 +58,10 @@ const routes = [{
 const router = new VueRouter({
     mode: 'history',
     base: process.env.BASE_URL,
-    routes
+    routes,
+    scrollBehavior () {
+        return { x: 0, y: 0 }
+    }
 })
 
 export default router

@@ -3,7 +3,7 @@
         <Header />
         <main id="main" class="main">
             <div class="introduce">
-                <div class="swiper-container">
+                <div class="swiper-container" id="visual-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide ratio ratio-1x1">
                             <video muted loop autoplay>
@@ -17,8 +17,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide ratio ratio-1x1">
-                            <img src="@/assets/bg_building.jpg" alt="">
+                        <div class="swiper-slide ratio ratio-1x1" :style="{ 'background-image': 'url('+ require('@/assets/img_visual_2.jpg') +')' }">
                             <div class="content">
                                 <div class="container">
                                     <h4>KEEP<br>SMART &amp; FUN</h4>
@@ -26,11 +25,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay>
-                                <source src="https://storage.coverr.co/videos/QddliPVHBsTBNQvYqzZMfCjTsbpxdLUO?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjE5MTYxNzE4fQ.-7WGnFHNnhKRdhNbg_6DCls0Fv1mePSW3g2Ggzne-ww" type="video/mp4">
-                                Your browser does not support the video tag.
-                            </video>
+                        <div class="swiper-slide ratio ratio-1x1" :style="{ 'background-image': 'url('+ require('@/assets/img_visual_3.jpg') +')' }">
                             <div class="content">
                                 <div class="container">
                                     <h4>BE BOLD!</h4>
@@ -43,10 +38,10 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col d-flex align-items-center">
-                                    <div class="swiper-button-prev"><i class="bi bi-chevron-left"></i></div>
-                                    <div class="btn-play"><i class="bi bi-play-fill"></i></div>
-                                    <div class="btn-pause"><i class="bi bi-pause-fill"></i></div>
-                                    <div class="swiper-button-next"><i class="bi bi-chevron-right"></i></div>
+                                    <div class="swiper-button-prev" @click="slidePrev"><i class="bi bi-chevron-left"></i></div>
+                                    <div class="btn-play" @click="slidePlay"><i class="bi bi-play-fill"></i></div>
+                                    <div class="btn-pause" @click="slidePause"><i class="bi bi-pause-fill"></i></div>
+                                    <div class="swiper-button-next" @click="slideNext"><i class="bi bi-chevron-right"></i></div>
                                     <div class="progress-bar"><div></div></div>
                                     <div class="swiper-pagination"></div>
                                 </div>
@@ -60,7 +55,7 @@
                     <div class="stock-cell col-12 col-lg-6">
                         <div class="container">
                             <div class="row">
-                                <div class="col">
+                                <div class="col d-lg-flex justify-content-lg-end">
                                     <div class="stock">
                                         <h4 class="mb-0"><div>STOCK</div></h4>
                                         <div class="price">
@@ -85,14 +80,24 @@
                                 <div class="col">
                                     <div class="news">
                                         <h4 class="mb-0"><div>NEWS</div></h4>
-                                        <ul class="list-unstyled mb-0">
+                                        <!-- <ul class="list-unstyled mb-0">
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210331002628', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2020.12)</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210324900751', '_blank', 'width=1000, height=600'); return false;">정기주주총회결과</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210319901702', '_blank', 'width=1000, height=600'); return false;">증권발행결과(자율공시)</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210316902069', '_blank', 'width=1000, height=600'); return false;">감사보고서제출</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210311901373', '_blank', 'width=1000, height=600'); return false;">[기재정정]매출액또는손익구조30%(대규모법인은15%)이상변동</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210310001236', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2019.12)</a></li>
-                                        </ul>
+                                        </ul> -->
+                                        <div class="swiper-container" id="news-swiper">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210331002628', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2020.12)</a></div>
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210324900751', '_blank', 'width=1000, height=600'); return false;">정기주주총회결과</a></div>
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210319901702', '_blank', 'width=1000, height=600'); return false;">증권발행결과(자율공시)</a></div>
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210316902069', '_blank', 'width=1000, height=600'); return false;">감사보고서제출</a></div>
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210311901373', '_blank', 'width=1000, height=600'); return false;">[기재정정]매출액또는손익구조30%(대규모법인은15%)이상변동</a></div>
+                                                <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210310001236', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2019.12)</a></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -108,8 +113,6 @@
 <script>
 import Header from '@/components/header'
 import Footer from '@/components/footer'
-import Swiper from 'swiper'
-import 'swiper/swiper-bundle.css'
 
 export default {
     components: {
@@ -117,27 +120,63 @@ export default {
     },
     data: function() {
         return {
-            swiper: null
+            vSwiper: null,
+            nSwiper: null
         }
     },
     mounted: function() {
-        this.swiper = new Swiper('.swiper-container', {
+        this.vSwiper = new Swiper('#visual-swiper', {
             loop: true,
-            // allowTouchMove: false,
-            // pagination: {
-            //     el: '.swiper-pagination',
-            //     type: 'fraction'
-            // },
-            // navigation: {
-            //     nextEl: '.swiper-button-next',
-            //     prevEl: '.swiper-button-prev',
-            // },
+            allowTouchMove: false,
+            pagination: {
+                el: '.swiper-pagination',
+                type: 'fraction',
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            on: {
+                init: function() {
+                    // console.log('swiper init')
+                    document.querySelector('.introduce .controls').classList.add('play')
+                    this.autoplay.start()
+                }
+            }
+        })
+        this.nSwiper = new Swiper('#news-swiper', {
+            direction: 'vertical',
+            autoplay: true,
+            loop: true,
         })
     },
     destroyed: function() {
-        this.swiper.destroy(true, false)
+        this.vSwiper.destroy(true, false)
+        this.nSwiper.destroy(true, false)
     },
     methods: {
+        slideNext: function() {
+            this.vSwiper.slideNext()
+            this.vSwiper.autoplay.stop()
+            document.querySelector('.introduce .controls').classList.remove('play')
+            document.querySelector('.introduce .controls').classList.add('pause')
+        },
+        slidePrev: function() {
+            this.vSwiper.slidePrev()
+            this.vSwiper.autoplay.stop()
+            document.querySelector('.introduce .controls').classList.remove('play')
+            document.querySelector('.introduce .controls').classList.add('pause')
+        },
+        slidePlay: function() {
+            this.vSwiper.autoplay.start()
+            document.querySelector('.introduce .controls').classList.remove('pause')
+            document.querySelector('.introduce .controls').classList.add('play')
+        },
+        slidePause: function() {
+            this.vSwiper.autoplay.stop()
+            document.querySelector('.introduce .controls').classList.remove('play')
+            document.querySelector('.introduce .controls').classList.add('pause')
+        }
     },
 }
 </script>
@@ -218,6 +257,24 @@ export default {
                 }
             }
         }
+        .swiper-container {
+            height: 15px;
+            width: 100%;
+            .swiper-slide {
+                line-height: 1.5 !important;
+                a {
+                    display: block;
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 200;
+                    font-size: 10px;
+                    line-height: 1.5 !important;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
     }
     .introduce {
         position: relative;
@@ -243,6 +300,11 @@ export default {
                 font-size: 10px;
                 font-weight: 100;
             }
+        }
+        .swiper-slide {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: 50% 50%;
         }
         .controls {
             position: absolute;
@@ -378,9 +440,19 @@ export default {
         }
     }
     @media screen and (min-width: 992px) {
+        .stock-cell {
+            .container {
+                margin-right: 0;
+            }
+        }
+        .news-cell {
+            .container {
+                margin-left: 0;
+            }
+        }
         .stock {
             padding-left: 1.5rem;
-            float: right;
+            // float: right;
         }
         .stock, .news {
             width: calc(480px - 1.75rem);
@@ -405,13 +477,22 @@ export default {
             }
         }
         .news {
-            padding-left: 20px;
+            // padding-left: 20px;
+            padding-left: 1.5rem;
             ul {
                 height: calc(15px * 1.5);
             }
             li {
                 a {
                     font-size: 15px;
+                }
+            }
+            .swiper-container {
+                height: calc(15px * 1.5);
+                .swiper-slide {
+                    a {
+                        font-size: 15px;
+                    }
                 }
             }
         }

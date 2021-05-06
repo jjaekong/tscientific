@@ -27,7 +27,7 @@
                                 </dl>
                                 <dl class="d-flex align-items-center">
                                     <dt>메일</dt>
-                                    <dd><a href="mailto:info@tscientific.co.kr" target="_blank">info@tscientific.co.kr</a></dd>
+                                    <dd><a href="#" @click.prevent="copyEmail">info@tscientific.co.kr <i class="bi bi-files"></i></a></dd>
                                 </dl>
                             </div>
                         </div>
@@ -54,6 +54,16 @@
         </div>
     </footer>
 </template>
+
+<script>
+export default {
+    methods: {
+        copyEmail: function() {
+            prompt('이메일주소를 복사하세요.', 'info@tscientific.co.kr')
+        }
+    }
+}
+</script>
 
 <style lang="scss" scoped>
 #footer {

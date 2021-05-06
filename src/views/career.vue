@@ -107,7 +107,7 @@
                 <div class="container">
                     <div class="row align-items-end">
                         <div class="col">
-                            <a href="mailto:recruit@tscientific.co.kr" target="_blank">
+                            <a href="#" @click.prevent="copyEmail">
                                 <div><span>recruit@tscientific.co.kr</span></div>
                                 <div>입사지원<i class="bi bi-arrow-right"></i></div>
                             </a>
@@ -128,6 +128,11 @@
         components: {
             Header,
             Footer
+        },
+        methods: {
+            copyEmail: function() {
+                prompt('이메일주소를 복사하세요.', 'recruit@tscientific.co.kr')
+            }
         }
     }
 </script>
