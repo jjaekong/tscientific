@@ -7,7 +7,7 @@
                     <div class="swiper-wrapper">
                         <div class="swiper-slide ratio ratio-1x1">
                             <video muted loop autoplay>
-                                <source src="https://storage.coverr.co/videos/JzeUAO3sh3Jx8002TRKGOzpd4hkSh571W?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcHBJZCI6Ijg3NjdFMzIzRjlGQzEzN0E4QTAyIiwiaWF0IjoxNjE5MTYxMzg3fQ.1axTx46AdD2VsQRv6FV5FEivsl-u1Y86LdPQTuT31o0" type="video/mp4">
+                                <source src="@/assets/Scrolling on an iPhone XR.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
                             <div class="content">
@@ -17,7 +17,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide ratio ratio-1x1" :style="{ 'background-image': 'url('+ require('@/assets/img_visual_2.jpg') +')' }">
+                        <div class="swiper-slide ratio ratio-1x1">
+                            <video muted loop autoplay>
+                                <source src="@/assets/Married man working.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <div class="content">
                                 <div class="container">
                                     <h4>KEEP<br>SMART &amp; FUN</h4>
@@ -25,7 +29,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide ratio ratio-1x1" :style="{ 'background-image': 'url('+ require('@/assets/img_visual_3.jpg') +')' }">
+                        <div class="swiper-slide ratio ratio-1x1">
+                            <video muted loop autoplay>
+                                <source src="@/assets/Woman typing on an iPhone.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <div class="content">
                                 <div class="container">
                                     <h4>BE BOLD!</h4>
@@ -50,7 +58,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid">
+            <!-- <div class="container-fluid">
                 <div class="row">
                     <div class="stock-cell col-12 col-lg-6">
                         <div class="container">
@@ -80,14 +88,14 @@
                                 <div class="col">
                                     <div class="news">
                                         <h4 class="mb-0"><div>NEWS</div></h4>
-                                        <!-- <ul class="list-unstyled mb-0">
+                                        <!- <ul class="list-unstyled mb-0">
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210331002628', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2020.12)</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210324900751', '_blank', 'width=1000, height=600'); return false;">정기주주총회결과</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210319901702', '_blank', 'width=1000, height=600'); return false;">증권발행결과(자율공시)</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210316902069', '_blank', 'width=1000, height=600'); return false;">감사보고서제출</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210311901373', '_blank', 'width=1000, height=600'); return false;">[기재정정]매출액또는손익구조30%(대규모법인은15%)이상변동</a></li>
                                             <li><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210310001236', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2019.12)</a></li>
-                                        </ul> -->
+                                        </ul> ->
                                         <div class="swiper-container" id="news-swiper">
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide"><a class="text-truncate" href="#" onclick="window.open('http://dart.fss.or.kr/dsaf001/main.do?rcpNo=20210331002628', '_blank', 'width=1000, height=600'); return false;">[기재정정]사업보고서 (2020.12)</a></div>
@@ -104,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </main>
         <Footer />
     </div>
@@ -120,8 +128,7 @@ export default {
     },
     data: function() {
         return {
-            vSwiper: null,
-            nSwiper: null
+            vSwiper: null
         }
     },
     mounted: function() {
@@ -144,15 +151,9 @@ export default {
                 }
             }
         })
-        this.nSwiper = new Swiper('#news-swiper', {
-            direction: 'vertical',
-            autoplay: true,
-            loop: true,
-        })
     },
     destroyed: function() {
         this.vSwiper.destroy(true, false)
-        this.nSwiper.destroy(true, false)
     },
     methods: {
         slideNext: function() {

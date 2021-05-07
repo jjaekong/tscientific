@@ -109,7 +109,7 @@ export default {
                 & + a {
                     margin-left: 20px;
                 }
-                &.active {
+                &.router-link-active {
                     color: #2f74f5;
                 }
             }
