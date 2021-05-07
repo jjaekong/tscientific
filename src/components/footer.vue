@@ -202,5 +202,9 @@ export default {
             }
         }
     }
+    @media screen and (min-width: 1200px) {
+        padding-top: 80px;
+        padding-bottom: 150px;
+    }
 }
 </style>

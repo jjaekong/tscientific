@@ -6,7 +6,7 @@
                 <div class="swiper-container" id="visual-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay>
+                            <video muted loop autoplay preload="auto">
                                 <source src="@/assets/Scrolling on an iPhone XR.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -18,7 +18,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay>
+                            <video muted loop autoplay preload="auto">
                                 <source src="@/assets/Married man working.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -30,7 +30,7 @@
                             </div>
                         </div>
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay>
+                            <video muted loop autoplay preload="auto">
                                 <source src="@/assets/Woman typing on an iPhone.mp4" type="video/mp4">
                                 Your browser does not support the video tag.
                             </video>
@@ -531,6 +531,11 @@ export default {
     @media screen and (min-width: 1200px) {
         .stock, .news {
             width: calc(570px - 1.75rem);
+        }
+        .introduce {
+            .swiper-slide {
+                height: 650px;
+            }
         }
     }
     @media screen and (min-width: 1400px) {
