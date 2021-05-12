@@ -9,6 +9,9 @@
                         <li><router-link to="/business" data-dismiss="modal">BUSINESS</router-link></li>
                         <li><router-link to="/ir" data-dismiss="modal">IR</router-link></li>
                         <li><router-link to="/career" data-dismiss="modal">CAREER</router-link></li>
+                        <li class="bar"></li>
+                        <li><a href="https://cs.tscientific.co.kr" target="_blank">온라인 고객센터</a></li>
+                        <li><a href="#inquire" data-toggle="modal" data-dismiss="modal">제휴/서비스 문의</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,10 +37,6 @@
     }
     .modal-content {
         background-color: black;
-        background-image: url('~@/assets/bg_logo_blue.png');
-        background-repeat: no-repeat;
-        background-size: 50% auto;
-        background-position: 100% 100%;
     }
     .modal-body {
         padding-right: .75rem!important;
@@ -60,6 +59,18 @@
             }
             li + li {
                 margin-top: 20px;
+            }
+            .bar {
+                margin-top: 30px;
+                margin-bottom: 30px;
+                background-color: #2f74f5;
+                height: 2px;
+                width: 10px;
+                & ~ li {
+                    a {
+                        color: #2f74f5;
+                    }
+                }
             }
         }
     }

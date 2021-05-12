@@ -18,7 +18,16 @@
                             <router-link to="/ir">IR</router-link>
                             <router-link to="/career">CAREER</router-link>
                         </nav>
-                        <a class="inquiry text-decoration-none rounded-pill d-inline-block" href="#inquire" data-toggle="modal">제휴/서비스 문의</a>
+                        <!-- <a class="inquiry text-decoration-none rounded-pill d-inline-block" href="#inquire" data-toggle="modal">제휴/서비스 문의</a> -->
+                        <a class="d-lg-none cs-center text-decoration-none rounded-pill d-inline-block" href="https://cs.tscientific.co.kr" target="_blank">온라인 고객센터 <i class="bi bi-box-arrow-up-right"></i></a>
+                        <a class="d-none cs-center-qr d-lg-inline-flex text-decoration-none align-items-center" href="https://cs.tscientific.co.kr" target="_blank">
+                            <img src="@/assets/img_qrcode.jpg">
+                            <div>
+                                온라인<br>
+                                <span>고객센터</span><br>
+                                바로가기
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -91,6 +100,15 @@ export default {
         padding-left: 10px;
         padding-right: 10px;
     }
+    .cs-center {
+        color: rgb(44, 46, 135);
+        font-weight: 900;
+        background-color: #eee;
+        font-size: 10px;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     @media screen and (min-width: 768px) {
         .row {
             height: 90px;
@@ -131,7 +149,7 @@ export default {
             }
         }
         .menu {
-            margin-right: 30px;
+            margin-right: 50px;
             a {
                 font-size: 15px;
                 & + a {
@@ -144,6 +162,21 @@ export default {
             line-height: 30px;
             padding-left: 20px;
             padding-right: 20px;
+        }
+        .cs-center-qr {
+            color: #000;
+            font-weight: 800;
+            line-height: 1.2;
+            img {
+                margin-right: .25rem;
+                width: 50px;
+                height: 50px;
+            }
+            div {
+                span {
+                    color: #2f74f5;
+                }
+            }
         }
     }
 }
