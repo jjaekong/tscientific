@@ -6,9 +6,8 @@
                 <div class="swiper-container" id="visual-swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay preload="auto">
+                            <video muted loop autoplay preload="auto" poster="@/assets/img_visual_1.jpg">
                                 <source src="@/assets/Scrolling on an iPhone XR.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
                             <div class="content">
                                 <div class="container">
@@ -18,9 +17,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay preload="auto">
+                            <video muted loop autoplay preload="auto" poster="@/assets/img_visual_2.jpg">
                                 <source src="@/assets/Married man working.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
                             <div class="content">
                                 <div class="container">
@@ -30,9 +28,8 @@
                             </div>
                         </div>
                         <div class="swiper-slide ratio ratio-1x1">
-                            <video muted loop autoplay preload="auto">
+                            <video muted loop autoplay preload="auto" poster="@/assets/img_visual_3.jpg">
                                 <source src="@/assets/Woman typing on an iPhone.mp4" type="video/mp4">
-                                Your browser does not support the video tag.
                             </video>
                             <div class="content">
                                 <div class="container">
