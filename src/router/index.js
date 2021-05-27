@@ -34,6 +34,10 @@ const routes = [{
         component: () => import('../views/privacy_policy_201116.vue')
     },
     {
+        path: '/privacy_policy_210311',
+        component: () => import('../views/privacy_policy_210311.vue')
+    },
+    {
         path: '/data_loss_prevention',
         component: () => import('../views/data_loss_prevention.vue')
     },

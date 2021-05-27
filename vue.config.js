@@ -7,5 +7,11 @@ module.exports = {
                 args[0].title = '티사이언티픽';
                 return args;
             });
+    },
+    configureWebpack: {
+        performance: {
+            maxEntrypointSize: 256000,
+            maxAssetSize: 256000
+        }
     }
 }
